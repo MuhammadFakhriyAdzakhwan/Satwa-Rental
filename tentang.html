@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SatwaRental | Rental Mobil & Motor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+
+    <style>
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .login-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content-block {
+            text-align: left;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .vm-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .vm-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            width: 45%;
+            text-align: left;
+        }
+
+        .vm-item h4 {
+            font-size: 22px;
+            color: #28a745;
+            margin-top: 0;
+        }
+        
+        .contact-cta {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .contact-cta:hover {
+            background-color: #1e7e34;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="text-2xl font-bold text-blue-600">SatwaRental</h1>
+        <ul class="flex space-x-6 text-sm font-medium">
+          <li><a href="beranda.html" class="hover:text-blue-600">Beranda</a></li>
+          <li><a href="kendaraan.html" class="hover:text-blue-600">Kendaraan</a></li>
+          <li><a href="tentang.html" class="hover:text-blue-600">Tentang</a></li>
+          <li><a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 text-center">
+        <div class="container">
+            <h1 class="text-4xl font-bold mb-4">Kami Adalah Mitra Perjalanan Anda</h1>
+            <p class="text-lg mb-6">Membangun kepercayaan, menyediakan mobilitas.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Kisah SatwaRental</h2>
+            <div class="content-block">
+                <p>SatwaRental bukan sekadar bisnis rental biasa. Kami lahir dari frustrasi tiga anak muda di sebuah rumah makan di jl pembangunan pada awal tahun 2025</p>
+                <p>Kami muak dengan proses sewa yang ribet, mobil yang kurang terawat, dan harga yang nggak transparan. Kami bertanya: "Kenapa mencari kendaraan harus serumit ini"</p>
+                <p>Dari pertanyaan itu, lahir SatwaRental: sebuah platform yang menjembatani teknologi dengan kenyamanan berkendara. Kami berkomitmen untuk menghadirkan armada yang #SiapJalan, proses yang 100% digital, dan layanan *support* yang se-responsif *chat* teman. Kami percaya, petualangan keren dimulai dengan kendaraan yang tepat—dan itu harus mudah diakses oleh siapa saja!</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Visi & Misi Kami</h2>
+            <div class="vm-grid">
+                <div class="vm-item">
+                    <h4>Visi</h4>
+                    <p>Menjadi platform rental kendaraan online terdepan di Indonesia yang dikenal karena keandalan, inovasi, dan kualitas pelayanannya.</p>
+                </div>
+                <div class="vm-item">
+                    <h4>Misi</h4>
+                    <ul>
+                        <li>Menyediakan armada kendaraan yang beragam, terbaru, dan selalu dalam kondisi terbaik.</li>
+                        <li>Memberikan proses penyewaan yang cepat dan transparan melalui teknologi.</li>
+                        <li>Menjaga kepuasan pelanggan melalui dukungan 24/7 dan asuransi komprehensif.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">Mari Terhubung!</h2>
+            <p>Siap untuk bepergian? Jika Anda memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi tim dukungan kami. Kami siap membantu Anda merencanakan perjalanan yang sempurna!</p>
+            <a href="https://wa.me/6282166919100" class="contact-cta">Hubungi Kami Sekarang</a>
+        </div>
+    </section>
+
+</body>
+</html>

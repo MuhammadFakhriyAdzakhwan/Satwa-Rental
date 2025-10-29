@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SatwaRental | Rental Mobil & Motor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+
+    <!-- ======== NAVBAR ======== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="text-2xl font-bold text-blue-600">SatwaRental</h1>
+        <ul class="flex space-x-6 text-sm font-medium">
+          <li><a href="beranda.html" class="hover:text-blue-600">Beranda</a></li>
+          <li><a href="kendaraan.html" class="hover:text-blue-600">Kendaraan</a></li>
+          <li><a href="tentang.html" class="hover:text-blue-600">Tentang</a></li>
+          <li><a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ======== HERO SECTION ======== -->
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 text-center">
+      <h2 class="text-4xl font-bold mb-4">Sewa Mobil & Motor dengan Mudah </h2>
+      <p class="text-lg mb-6">Temukan kendaraan terbaik untuk perjalananmu di mana saja, kapan saja.</p>
+    </section>
+
+    <!-- ======== DAFTAR KENDARAAN ======== -->
+    <main id="kendaraan" class="max-w-7xl mx-auto px-6 py-12">
+      <h3 class="text-2xl font-bold mb-8 text-center">Daftar Kendaraan</h3>
+
+      <!-- Grid Kendaraan -->
+      <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8" id="vehicleList">
+        <!-- Data kendaraan akan dimasukkan lewat JavaScript -->
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

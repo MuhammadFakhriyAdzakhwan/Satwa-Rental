@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Kendaraan | SewaKendaraan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- ====== NAVBAR ====== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 class="text-2xl font-bold text-blue-600">SewaKendaraan</h1>
+        <ul class="flex space-x-6 text-sm font-medium">
+          <li><a href="beranda.html" class="hover:text-blue-600">Beranda</a></li>
+          <li><a href="kendaraan.html" class="hover:text-blue-600">Kendaraan</a></li>
+          <li><a href="booking.html" class="hover:text-blue-600">Booking</a></li>
+          <li><a href="tentang.html" class="hover:text-blue-600">Tentang</a></li>
+          <li><a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ====== BOOKING FORM ====== -->
+    <main class="flex-1 max-w-3xl mx-auto mt-10 bg-white shadow-md rounded-2xl p-8">
+      <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">Formulir Pemesanan Kendaraan</h2>
+
+      <form id="bookingForm" class="space-y-6">
+        <!-- Pilih Kendaraan -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Pilih Kendaraan</label>
+          <select id="vehicleSelect" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" required>
+            <option value="">-- Pilih Kendaraan --</option>
+          </select>
+        </div>
+
+        <!-- Tanggal Sewa -->
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="tanggalMulai" class="block text-sm font-medium mb-1">Tanggal Mulai</label>
+            <input type="date" id="tanggalMulai" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" required />
+          </div>
+          <div>
+            <label for="tanggalSelesai" class="block text-sm font-medium mb-1">Tanggal Selesai</label>
+            <input type="date" id="tanggalSelesai" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" required />
+          </div>
+        </div>
+
+        <!-- Total Harga -->
+        <div>
+          <label class="block text-sm font-medium mb-1">Total Harga (Rp)</label>
+          <input type="text" id="totalHarga" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100" readonly />
+        </div>
+
+        <!-- Tombol Submit -->
+        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+          Konfirmasi Booking
+        </button>
+      </form>
+    </main>
+
+    <!-- ====== SCRIPT ====== -->
+    <script>
+      // Simulasi data kendaraan (nanti akan diambil dari backend API)
+      const vehicles = [
+        { id: 1, nama: "Toyota Avanza", harga: 350000 },
+        { id: 2, nama: "Honda Beat", harga: 90000 },
+        { id: 3, nama: "Suzuki Ertiga", harga: 370000 },
+      ];
+
+      const select = document.getElementById("vehicleSelect");
+      const totalHarga = document.getElementById("totalHarga");
+      const tglMulai = document.getElementById("tanggalMulai");
+      const tglSelesai = document.getElementById("tanggalSelesai");
+
+      // Isi dropdown kendaraan
+      vehicles.forEach(v => {
+        const opt = document.createElement("option");
+        opt.value = v.id;
+        opt.textContent = `${v.nama} - Rp ${v.harga.toLocaleString()}/hari`;
+        select.appendChild(opt);
+      });
+
+      // Hitung total harga otomatis
+      function hitungTotal() {
+        const kendaraan = vehicles.find(v => v.id == select.value);
+        const mulai = new Date(tglMulai.value);
+        const selesai = new Date(tglSelesai.value);
+        if (!kendaraan || !tglMulai.value || !tglSelesai.value) return;
+
+        const hari = Math.ceil((selesai - mulai) / (1000 * 3600 * 24));
+        if (hari > 0) {
+          totalHarga.value = (kendaraan.harga * hari).toLocaleString();
+        } else {
+          totalHarga.value = "";
+        }
+      }
+
+      select.addEventListener("change", hitungTotal);
+      tglMulai.addEventListener("change", hitungTotal);
+      tglSelesai.addEventListener("change", hitungTotal);
+
+      // Kirim data booking (simulasi)
+      document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const vehicleId = select.value;
+        const mulai = tglMulai.value;
+        const selesai = tglSelesai.value;
+        const total = totalHarga.value.replace(/\./g, "").replace(/,/g, "");
+
+        if (!vehicleId || !mulai || !selesai || !total) {
+          alert("Lengkapi semua data terlebih dahulu!");
+          return;
+        }
+
+        // nanti ganti ke fetch("/api/bookings", { method: "POST", body: JSON.stringify({...}) })
+        console.log({
+          vehicle_id: vehicleId,
+          tanggal_mulai: mulai,
+          tanggal_selesai: selesai,
+          total_harga: total,
+        });
+
+        alert("Booking berhasil dikirim (simulasi). Nanti akan disimpan ke database.");
+        window.location.href = "index.html"; // redirect sementara
+      });
+    </script>
+  </body>
+</html>
