@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SatwaRental | Rental Mobil & Motor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .hero-cta {
+            background-color: white;
+            color: #007bff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .hero-cta:hover { background-color: #f0f0f0; }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="text-2xl font-bold text-blue-600">SatwaRental</h1>
+            <ul class="flex space-x-6 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-600">Beranda</a></li>
+                <li><a href="kendaraan.html" class="hover:text-blue-600">Kendaraan</a></li>
+                <li><a href="tentang.html" class="hover:text-blue-600">Tentang</a></li>
+                <li><a href="login.html" class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <section class="relative overflow-hidden">
+
+        <!-- Sliding Track -->
+        <div id="sliderTrack" class="flex transition-transform duration-700">
+
+            <!-- Slide 1 -->
+            <div class="min-w-full h-[380px] md:h-[500px] flex flex-col justify-center items-center text-white bg-gradient-to-r from-blue-500 to-indigo-600">
+                <h1 class="text-4xl font-bold mb-3">Sewa Mobil & Motor dengan Mudah</h1>
+                <p class="text-lg mb-6">Temukan kendaraan terbaik untuk perjalananmu di mana saja, kapan saja.</p>
+                <a href="kendaraan.html" class="hero-cta">Lihat Kendaraan</a>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full h-[380px] md:h-[500px] flex flex-col justify-center items-center text-white bg-gradient-to-r from-indigo-600 to-purple-600">
+                <h1 class="text-4xl font-bold mb-3">Promo Akhir Tahun</h1>
+                <p class="text-lg mb-6">Diskon hingga 30% untuk semua kendaraan!</p>
+                <a href="promo.html" class="hero-cta">Lihat Promo</a>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full h-[380px] md:h-[500px] flex flex-col justify-center items-center text-white bg-gradient-to-r from-purple-600 to-pink-600">
+                <h1 class="text-4xl font-bold mb-3">Layanan 24 Jam</h1>
+                <p class="text-lg mb-6">Kami siap melayani kapan saja untuk kebutuhan mendadak kamu.</p>
+                <a href="layanan.html" class="hero-cta">Pelajari Lebih</a>
+            </div>
+
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-white/30">
+            <div id="progressBar" class="h-1 bg-white w-0"></div>
+        </div>
+
+        <!-- MODERN SLIDER BUTTONS -->
+<button id="prevBtn"
+        class="absolute left-5 top-1/2 -translate-y-1/2 
+               backdrop-blur-md bg-white/20 border border-white/30
+               text-white text-3xl font-light w-12 h-12 flex items-center justify-center
+               rounded-full hover:bg-white/40 hover:scale-110 transition">
+  ‹
+</button>
+
+<button id="nextBtn"
+        class="absolute right-5 top-1/2 -translate-y-1/2 
+               backdrop-blur-md bg-white/20 border border-white/30
+               text-white text-3xl font-light w-12 h-12 flex items-center justify-center
+               rounded-full hover:bg-white/40 hover:scale-110 transition">
+  ›
+</button>
+
+    </section>
+
+    <!-- ===== SECTION FEATURES (PUNYAMU) ===== -->
+    <section>
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-10">Kenapa Memilih Kami?</h2>
+            <div class="flex justify-center flex-wrap gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-60">
+                    <div class="text-4xl">🛡️</div>
+                    <h3 class="text-xl font-bold mt-3">Asuransi Komprehensif</h3>
+                    <p>Kendaraan aman dengan perlindungan penuh.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg w-60">
+                    <div class="text-4xl">💸</div>
+                    <h3 class="text-xl font-bold mt-3">Harga Terbaik</h3>
+                    <p>Tanpa biaya tersembunyi.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg w-60">
+                    <div class="text-4xl">⏱️</div>
+                    <h3 class="text-xl font-bold mt-3">Proses Cepat</h3>
+                    <p>Mudah & efisien.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg w-60">
+                    <div class="text-4xl">🛠️</div>
+                    <h3 class="text-xl font-bold mt-3">Kendaraan Terawat</h3>
+                    <p>Armada siap jalan selalu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS (PUNYAMU) ===== -->
+    <section class="bg-white py-10">
+        <h2 class="text-3xl font-bold text-center mb-10">Apa Kata Pelanggan Kami?</h2>
+        <div class="flex justify-center gap-10">
+            <div class="bg-white p-8 border-l-4 border-yellow-400 shadow-xl max-w-sm">
+                <p class="italic">"Pelayanannya ramah, mobil bersih & nyaman."</p>
+                <div class="font-bold mt-3">- Ayu L.</div>
+            </div>
+
+            <div class="bg-white p-8 border-l-4 border-yellow-400 shadow-xl max-w-sm">
+                <p class="italic">"Motor sangat baik, perjalanan jadi lancar!"</p>
+                <div class="font-bold mt-3">- Bambang S.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SLIDER SCRIPT ===== -->
+    <script>
+        let index = 0;
+        const slider = document.getElementById("sliderTrack");
+        const slides = document.querySelectorAll("#sliderTrack > div");
+        const total = slides.length;
+        const progress = document.getElementById("progressBar");
+
+        let progressInterval;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function startProgress() {
+            progress.style.width = "0%";
+            let width = 0;
+            clearInterval(progressInterval);
+
+            progressInterval = setInterval(() => {
+                width++;
+                progress.style.width = width + "%";
+
+                if (width >= 100) nextSlide();
+            }, 50);
+        }
+
+        function nextSlide() {
+            index = (index + 1) % total;
+            updateSlider();
+            startProgress();
+        }
+
+        function prevSlide() {
+            index = (index - 1 + total) % total;
+            updateSlider();
+            startProgress();
+        }
+
+        document.getElementById("nextBtn").onclick = nextSlide;
+        document.getElementById("prevBtn").onclick = prevSlide;
+
+        /* Autoplay */
+        startProgress();
+
+        /* Swipe gesture */
+        let startX = 0;
+        slider.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+        slider.addEventListener("touchend", e => {
+            let endX = e.changedTouches[0].clientX;
+
+            if (startX - endX > 50) nextSlide();
+            if (endX - startX > 50) prevSlide();
+        });
+    </script>
+
+</body>
+</html>
